@@ -1,0 +1,94 @@
+{% extends 'dashboard.html' %}
+
+{% block content %}
+
+
+
+<script
+  src="https://code.jquery.com/jquery-3.6.0.js"
+  integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+  crossorigin="anonymous"></script>
+
+ <div>
+
+      <div class="row justify-content-sm-center">
+
+         <div class="col-sm-9 mt-5 border border-primary rounded p-3" style="background-color:#ffffff">
+           <h4 class="text-center"> Paid AMC </h4>
+
+<!--            {% for obj in amclist %}-->
+<!--                <p>{{obj.email}}</p>-->
+<!--             {% endfor %}-->
+
+             <table class="table table-bordered .table-striped">
+              <thead>
+                <tr>
+                  <th scope="col">Id</th>
+                  <th scope="col">Customer Name</th>
+                  <th scope="col">AMC Type</th>
+                  <th scope="col">AMC Warrenty</th>
+                  <th scope="col">Fee</th>
+                  <th scope="col">Start Date</th>
+                  <th scope="col">End Date</th>
+                  <th scope="col"> Email </th>
+                  <th scope="col"> Paid </th>
+
+                </tr>
+              </thead>
+              <tbody>
+                {% for obj in amclist %}
+                <tr>
+                  <th scope="row">{{obj.id}}</th>
+                  <td>{{obj.CustomerName}}</td>
+                  <td>{{obj.AmcType}}</td>
+                  <td>{{obj.AmcWarrenty}}</td>
+                   <td>{{obj.MaxFeeServices}}</td>
+                  <td>{{obj.StartDate}}</td>
+                    <td>{{obj.EndDate}}</td>
+                  <td>{{obj.email}}</td>
+                  <td> <button class="btn btn-sm btn-outline-primary"> Yes </button> </td>
+                </tr>
+                {% endfor %}
+
+<!--                <tr>-->
+<!--                  <th scope="row">1</th>-->
+<!--                  <td>Mark</td>-->
+<!--                  <td>Annual</td>-->
+<!--                  <td>1 year</td>-->
+<!--                   <td>10000</td>-->
+<!--                  <td>10-05-2021</td>-->
+<!--                  <td>10-1-2022</td>-->
+<!--                  <td> <button class="btn btn-sm btn-outline-primary"> Yes </button> </td>-->
+<!--                </tr>-->
+<!--                <tr>-->
+<!--                  <th scope="row">2</th>-->
+<!--                 <td>Mark</td>-->
+<!--                  <td>Annual</td>-->
+<!--                  <td>1 year</td>-->
+<!--                   <td>10000</td>-->
+<!--                  <td>10-05-2021</td>-->
+<!--                  <td>10-1-2022</td>-->
+<!--                  <td> <button class="btn btn-sm btn-outline-primary"> Yes </button> </td>-->
+<!--                </tr>-->
+<!--                <tr>-->
+<!--                  <th scope="row">3</th>-->
+<!--                 <td>Mark</td>-->
+<!--                  <td>Annual</td>-->
+<!--                  <td>1 year</td>-->
+<!--                   <td>10000</td>-->
+<!--                  <td>10-05-2021</td>-->
+<!--                  <td>10-1-2022</td>-->
+<!--                   <td> <button class="btn btn-sm btn-outline-primary"> Yes </button> </td>-->
+<!--                </tr>-->
+
+              </tbody>
+            </table>
+
+         </div>
+
+     </div>
+
+
+ </div>
+
+{% endblock %}

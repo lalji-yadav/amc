@@ -1,0 +1,78 @@
+{% extends "authbase.html" %}
+
+{% block content %}
+
+<!--<div class="main_content">-->
+<!--  Welcome to my home-->
+<!--</div>-->
+
+<style>
+    .errorlist {
+      list-style-type:none;
+      padding:0px;
+      margin:0px;
+    }
+
+</style>
+
+  <div class="row offset-sm-4" style="padding-top: 10%;">
+
+    <form method="POST" action="" novalidate>
+      {% csrf_token %}
+       <div class="col-sm-6 shadow p-5" style="background-color: #ffffff; border-radius:25px" >
+      <div class="row">
+        <div class="col-sm-4">
+          <label>{{form.username.label_tag}}<span class="text-danger">*</span></label>
+        </div>
+        <div class="col-sm-8">
+          <div class="form-group">
+            {{form.username}}
+<!--            <input type="text" class="form-control" aria-describedby="emailHelp" placeholder="User name">-->
+          </div>
+          <span class="text-danger">{{form.username.errors}}</span>
+        </div>
+      </div>
+
+
+      <div class="row mt-2">
+        <div class="col-sm-4">
+          <label>{{form.password.label_tag}}<span class="text-danger">*</span></label>
+        </div>
+        <div class="col-sm-8">
+          <div class="form-group">
+            {{form.password}}
+<!--            <input type="password" class="form-control" aria-describedby="emailHelp" placeholder="Password">-->
+          </div>
+          <span class="text-danger">{{form.password.errors}}</span>
+        </div>
+
+      </div>
+
+
+      <div class="row justify-content-end mt-1">
+         <a style="width:145px" href="/password_reset" >Forgot Password</a>
+      </div>
+
+      <div class="row justify-content-center pt-4">
+        <div class="col-1">
+          <button type="submit" style="width:150px;border-radius:20px" class="btn btn-outline-primary btn-sm">
+             Login</button>
+<!--            <a style="width:150px;border-radius:20px" class="btn btn-outline-primary btn-sm" href="">-->
+<!--              Login </a>-->
+        </div>
+
+      </div>
+
+      <div class="row offset-sm-2 mt-2">
+        <p>Don't have an account? <a href="/register" > Sign up  </a> </p>
+      </div>
+
+
+    </div>
+
+    </form>
+
+  </div>
+
+{% endblock %}
+

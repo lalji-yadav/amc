@@ -1,0 +1,92 @@
+{% extends "authbase.html" %}
+
+{% block content %}
+
+<style>
+    .errorlist {
+      list-style-type:none;
+      padding:0px;
+      margin:0px;
+    }
+</style>
+
+  <div class="row offset-sm-4" style="padding-top: 10%;">
+    <form method="post" action="" novalidate >
+       {% csrf_token %}
+
+<!--      {{ form.as_p }}-->
+       <div class="col-sm-6 shadow p-5" style="background-color: #ffffff; border-radius:25px">
+      <div class="row">
+        <div class="col-sm-4">
+          <label>{{form.username.label_tag}}<span class="text-danger">*</span></label>
+        </div>
+        <div class="col-sm-8">
+          <div class="form-group">
+            {{form.username}}
+<!--            <input type="text" class="form-control" aria-describedby="emailHelp" placeholder="User name">-->
+          </div>
+             <span class="text-danger"> {{form.username.errors}} </span>
+        </div>
+
+      </div>
+
+         <div class="row mt-2">
+        <div class="col-sm-4">
+          <label>{{form.email.label_tag}}<span class="text-danger">*</span></label>
+        </div>
+        <div class="col-sm-8">
+          <div class="form-group">
+            {{form.email}}
+<!--            <input type="text" class="form-control" aria-describedby="emailHelp" placeholder="User name">-->
+          </div>
+             <span class="text-danger"> {{form.email.errors}} </span>
+        </div>
+      </div>
+
+      <div class="row mt-2">
+        <div class="col-sm-4">
+          <label>{{ form.password1.label_tag }}<span class="text-danger">*</span></label>
+        </div>
+        <div class="col-sm-8">
+          <div class="form-group">
+            {{ form.password1 }}
+<!--            <input type="password" class="form-control" aria-describedby="emailHelp" placeholder="Password">-->
+          </div>
+           <span class="text-danger"> {{form.password1.errors}} </span>
+        </div>
+      </div>
+
+      <div class="row mt-2">
+        <div class="col-sm-6">
+          <label>Confirm Password:<span class="text-danger">*</span></label>
+        </div>
+        <div class="col-sm-6">
+          <div class="form-group">
+            {{ form.password2 }}
+<!--            <input type="password" class="form-control" aria-describedby="emailHelp" placeholder="Password">-->
+          </div>
+           <span class="text-danger"> {{form.password2.errors}} </span>
+        </div>
+      </div>
+
+      <div class="row justify-content-center pt-5">
+
+        <div class="col-1">
+<!--            <a style="width:150px;border-radius:20px" class="btn btn-outline-primary btn-sm" href="">-->
+<!--              Register </a>-->
+          <button type="submit" style="width:150px;border-radius:20px" class="btn btn-outline-primary btn-sm">
+              Sign up</button>
+        </div>
+
+      </div>
+
+      <div class="row offset-sm-2 mt-2">
+        <p>Have already an account ? <a href="/login" > Login here  </a> </p>
+      </div>
+
+    </div>
+    </form>
+
+  </div>
+
+{% endblock %}
